@@ -17,32 +17,45 @@ public class Data {
 				this.setMes(1);
 			}
 		}
+		else {
+			this.setMes(mes);
+		}
 		
 		// faz checagem do dia
 		if (this.getMes() == 4 || this.getMes() == 6 || this.getMes() == 9 || this.getMes() == 11) {  // caso mes com 30 dias
-			if (this.getDia() > 30) {
+			if (dia > 30) {
 				this.setDia(30);
 			}
-			else if (this.getDia() <= 0) {
+			else if (dia <= 0) {
 				this.setDia(1);
+			}
+			else {
+				this.setDia(dia);
 			}
 		}
 		else if (this.getMes() == 2) { // caso mes de fevereiro
-			if (this.getDia() > 29) {
+			if (dia > 29) {
 				this.setDia(29);
 			}
-			else if (this.getDia() <= 0) {
+			else if (dia <= 0) {
 				this.setDia(1);
+			}
+			else {
+				this.setDia(dia);
 			}
 		}
 		else { // caso mes com 31 dias
-			if (this.getDia() > 31) {
+			if (dia > 31) {
 				this.setDia(31);
 			}
-			else if (this.getDia() <= 0) {
+			else if (dia <= 0) {
 				this.setDia(1);
 			}
+			else {
+				this.setDia(dia);
+			}
 		}
+		this.setAno(ano);
 		this.setDia_da_semana(dia_da_semana);
 	}
 
@@ -118,9 +131,9 @@ public class Data {
 	// testes
 	public static void main(String[] args) {
 		
-		Data data1 = new Data(12, 12, 1987, DiaSemana.QUINTA);
+		Data data1 = new Data(4, 4, 1987, DiaSemana.QUINTA);
 		
-		System.out.println(data1.equals(DiaSemana.QUARTA));
+		System.out.println(data1.getDia());
 		
 	}
 	
